@@ -1,0 +1,712 @@
+#!/bin/bash
+
+_name="Salazaar"
+_desc="Network Wizard"
+_status="Very Good"
+_version="0.1.5"
+
+
+
+RED='\e[1;91m'
+GREEN='\e[1;92m'
+BLUE='\e[1;96m'
+YELLOW='\e[1;93m'
+NC='\033[0m'
+WHITE='\e[1;97m'
+
+
+# COLOR FUNCTIONS
+
+
+_green(){
+
+GREEN='\e[1;92m'
+printf "$GREEN\n"
+
+}
+
+_white(){
+
+WHITE='\e[1;97m'
+printf "$WHITE\n"
+
+}
+
+_yellow(){
+
+YELLOW='\e[1;93m'
+printf "$YELLOW\n"
+
+}
+
+_red(){
+
+RED='\e[1;91m'
+printf "$RED\n"
+
+}
+
+
+_cyan(){
+
+CYAN='\e[1;96m'
+printf "$CYAN\n"
+
+}
+
+_normal(){
+
+NC='\033[0m'
+printf "$NC\n"
+
+}
+
+_quietTextRestore(){
+
+NC='\033[0m'
+printf "$NC\n"
+
+}
+
+
+
+# MORPHING
+
+
+_magic_morph(){
+
+    printf "\n"
+    printf " Samsung / Apple / LG / Opoo / One Plus / Huawei\n"
+    printf " HP / Dell / IBM / Lenovo / Xperia / Yota / TV\n"
+    printf " Tesla / Bombardier / Toyota / US Army / Boeing\n"
+    printf " Lockheed / Airbus / NASA / Parrot\n"
+    printf "\n"
+
+}
+
+_samsung(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 38:2D:E8$end)
+printf "$WHITE Samsung, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_lg(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 2C:54:CF$end)
+printf "$WHITE LG, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_apple(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo DC:A9:04$end)
+printf "$WHITE Apple, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_oppo(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 50:29:F5$end)
+printf "$WHITE Oppo, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_one_plus(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo C0:EE:FB$end)
+printf "$WHITE One Plus, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_huawei(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 78:F5:FD$end)
+printf "$WHITE Huawei, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_xperia(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 1C:7B:21$end)
+printf "$WHITE Xperia, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_yota(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 28:C6:71$end)
+printf "$WHITE Yota Phone, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+
+_hp(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 3C:D9:2B$end)
+printf "$WHITE HP, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_dell(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo F8:DB:88$end)
+printf "$WHITE Dell, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_ibm(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 6C:AE:8B$end)
+printf "$WHITE IBM, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_lenovo(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 70:72:0D$end)
+printf "$WHITE IBM, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+
+
+
+_tesla(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 98:ED:5C$end)
+printf "$WHITE Tesla, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_bombardier(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 00:11:BD$end)
+printf "$WHITE Bombardier, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+
+_boeing(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 00:50:93$end)
+printf "$WHITE Boeing, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+
+_lockheed(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 00:07:EF$end)
+printf "$WHITE Lockheed, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_airbus(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 00:23:B9$end)
+printf "$WHITE Airbus, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+
+_us_army(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 00:C0:ED$end)
+printf "$WHITE US Army, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+
+_toyota(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 00:0A:AB$end)
+printf "$WHITE Toyota, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_parrot(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo A0:14:3D$end)
+printf "$WHITE Parrot, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_nasa(){
+
+off
+sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+echo 00:08:55$end)
+printf "$WHITE NASA, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+_tv(){
+
+  off
+  sudo ifconfig en0 ether 80:56:F2:78:98:DD
+  printf "$WHITE Sony Bravia, $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+
+}
+
+
+
+# FUNCTIONS
+
+_vers(){
+
+  printf "\n"
+  printf "        $_name    \n"
+  printf "         $_version                 \n"
+  printf "\n"
+
+}
+
+
+
+_help(){
+
+
+  printf "\n"
+  printf "$_name\n"
+  printf "\n"
+  printf "Usage:  salazaar [-vhupodw] [--summon <daemon> ]\n"
+  printf "\n"
+  printf "Options: -v - Show version info\n"
+  printf "         -h - Show help menu\n"
+  printf "         -p - power mode\n"
+  printf "         -d - destroy mode\n"
+  printf "         -w - wizard mode\n"
+  printf "         --morph - Network morphing\n"
+  printf "\n"
+  printf "Examples: salazaar -p\n"
+  printf "          salazaar -o --morph Apple\n"
+  printf "          salazaar --opaa\n"
+  printf "\n"
+
+
+}
+
+_install(){
+
+  sudo chmod +x salazaar
+  sudo cp salazaar /usr/local/bin/
+  printf "$GREEN __installed!$NC \n"
+
+
+}
+
+
+
+_blood(){
+
+   _red ; clear ; netstat -ap tcp ; _quietTextRestore
+
+}
+
+_light(){
+
+   _yellow ; clear ; netstat -ap udp ; _quietTextRestore
+
+}
+
+_status(){
+
+
+
+  clear
+  printf "$RED $_name $WHITE $_version $NC $BLUE $_status\n"
+  printf "`echo External IP  ` >> $YELLOW`dig +short myip.opendns.com @resolver1.opendns.com`$NC"
+  printf "\n`echo Local IP  ` >> $YELLOW`ifconfig en0 | grep inet | sed '1d' | awk '{print $2;}'`$NC"
+  printf "\n`echo MAC-Address  ` >> $YELLOW`ifconfig en0 | grep ether | awk '{print $2;}'`$NC"
+  printf "\n`echo Router IP  ` >> $BLUE`ipconfig getpacket en0 | grep router | awk '{print $3;}' | cut -c 2-12`$NC"
+  printf "\n$GREEN Location >> $WHITE" ; curl "ipinfo.io/city"
+  printf "$GREEN Coordinates >> $WHITE" ; curl "ipinfo.io/loc"
+  printf "$GREEN Internet Provided by >> $WHITE" ; curl "ipinfo.io/org"
+  printf "$GREEN`echo Machine named  ` $YELLOW`uname -n`$NC"
+  printf "\n`echo You are connected on channel `$BLUE `airport -c | awk '{print $2;}'` $NC`echo on router ` $BLUE`airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'`$NC\n"
+  printf "`echo "There are "`$BLUE`arp -a | grep ? -c` $NC`echo "devices connected here"`\n"
+  printf "$BLUE"
+  arp -a | sed -n '1p'
+  printf "$YELLOW"
+  arp -a | grep $(ifconfig en0 | grep inet | sed '1d' | awk '{print $2;}')
+  printf "$NC"
+  arp -a | sed '1d'
+  echo
+  printf "$WHITE\n"
+  date
+  printf "$NC\n"
+
+}
+
+_shed(){
+
+   clear
+
+}
+
+
+
+_look(){
+
+   curl ipinfo.io/$(nslookup $1 | sed -n '6p' | awk '{print $2;}')
+
+}
+
+_where(){
+
+   curl ipinfo.io/city/$(nslookup $1 | sed -n '6p' | awk '{print $2;}')
+
+}
+
+
+_what(){
+
+   printf "This is $(uname -s)\n"
+
+
+
+}
+
+
+
+
+_options(){
+
+   printf "-blood\n"
+   printf "-look\n"
+   printf "-dissect\n"
+   printf "-status or -power or -show\n"
+   printf "-out or -off or HIDE in poola mea\n"
+   printf "-poof or -gone\n"
+   printf "-shed or -done\n"
+   printf "-what\n"
+   printf "=-where\n"
+
+
+}
+
+
+_back(){
+
+   killall -9 CyberGhost\ VPN
+   _vpn-off
+
+}
+
+
+_vpn-on() {
+  /usr/bin/env osascript <<-EOF
+tell application "System Events"
+       tell current location of network preferences
+               set VPN to service "CyberGhost VPN (IKEV2)"
+               if exists VPN then connect VPN
+               repeat while (current configuration of VPN is not connected)
+                   delay 1
+               end repeat
+       end tell
+end tell
+EOF
+}
+
+_vpn-off() {
+   scutil --nc stop VPN
+}
+
+_up(){
+
+   open -a /Applications/CyberGhost\ VPN.app/Contents/MacOS/CyberGhost\ VPN
+   _vpn-on
+
+}
+
+appPID(){
+   ps -A | grep -m1 "$1" | awk '{print $1}'
+}
+
+off(){
+
+   sudo airport -z
+
+}
+
+
+on(){
+
+   networksetup -setairportpower en0 off
+   networksetup -setairportpower en0 on
+
+}
+
+_hide(){
+
+  off
+  sudo ifconfig en0 ether $(hexchars="0123456789ABCDEF"
+  end=$( for i in {1..6} ; do echo -n ${hexchars:$(( $RANDOM % 16 )):1} ; done | sed -e 's/\(..\)/-\1/g' )
+  echo 00-60-2F$end)
+  printf "You can't see me $(ifconfig en0 | grep ether | awk '{print $2}')\n"
+
+}
+
+_piece(){
+
+  off
+  sudo ifconfig en0 ether $(arp -a | awk '{print $4}' | sed '1d')
+  printf "$WHITE Integration done: $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+
+_mb(){
+
+  off
+  sudo ifconfig en0 ether $(arp -a | grep $(ipconfig getpacket en0 | grep router | awk '{print $3;}' | cut -c 2-12) | awk '{print $4}')
+  printf "$WHITE Hello, Motherboard: $(ifconfig en0 | grep ether | awk '{print $2}')$NC\n"
+
+}
+
+
+if [ "$1" == "-v" ]; then
+  _vers
+elif [[ "$1" == "-h" ]]; then
+  _help
+elif [[ "$1" == "-blood" ]]; then
+  _blood
+elif [[ "$1" == "-light" ]]; then
+  _light
+elif [[ "$1" == "-status" ]]; then
+  _status
+elif [[ "$1" == "-power" ]]; then
+  _status
+elif [[ "$1" == "-look" ]]; then
+   _look $2
+ elif [[ "$1" == "-shed" ]]; then
+   _shed
+ elif [[ "$1" == "--morph" ]]; then
+
+      if [ "$2" == "samsung" ]; then
+        _samsung
+
+      elif [[ "$2" == "lg" ]]; then
+        _lg
+
+      elif [[ "$2" == "apple" ]]; then
+        _apple
+
+      elif [[ "$2" == "huawei" ]]; then
+        _huawei
+
+      elif [[ "$2" == "xperia" ]]; then
+        _xperia
+
+      elif [[ "$2" == "oppo" ]]; then
+        _oppo
+
+      elif [[ "$2" == "yota" ]]; then
+        _yota
+
+      elif [[ "$2" == "hp" ]]; then
+        _hp
+
+      elif [[ "$2" == "dell" ]]; then
+        _dell
+
+      elif [[ "$2" == "ibm" ]]; then
+        _ibm
+
+      elif [[ "$2" == "lenovo" ]]; then
+        _lenovo
+
+      elif [[ "$2" == "one_plus" ]]; then
+        _one_plus
+
+      elif [[ "$2" == "airbus" ]]; then
+        _airbus
+
+      elif [[ "$2" == "boeing" ]]; then
+        _boeing
+
+      elif [[ "$2" == "lockheed" ]]; then
+        _lockheed
+
+      elif [[ "$2" == "bombardier" ]]; then
+        _bombardier
+
+      elif [[ "$2" == "tesla" ]]; then
+        _tesla
+
+      elif [[ "$2" == "toyota" ]]; then
+        _toyota
+
+      elif [[ "$2" == "us_army" ]]; then
+        _us_army
+
+      elif [[ "$2" == "parrot" ]]; then
+        _parrot
+
+      elif [[ "$2" == "nasa" ]]; then
+        _nasa
+
+      elif [[ "$2" == "tv" ]]; then
+        _tv
+
+      elif [[ "$2" == "magic" ]]; then
+        _magic_morph
+      else
+        print "Morphing option not present !\n"
+      fi
+
+
+ elif [[ "$1" == "-morph" ]]; then
+
+         if [ "$2" == "samsung" ]; then
+           _samsung
+         elif [[ "$2" == "lg" ]]; then
+           _lg
+         elif [[ "$2" == "apple" ]]; then
+           _apple
+         elif [[ "$2" == "huawei" ]]; then
+           _huawei
+         elif [[ "$2" == "xperia" ]]; then
+           _xperia
+         elif [[ "$2" == "oppo" ]]; then
+           _oppo
+         elif [[ "$2" == "hp" ]]; then
+           _hp
+         elif [[ "$2" == "dell" ]]; then
+           _dell
+         elif [[ "$2" == "ibm" ]]; then
+           _ibm
+         elif [[ "$2" == "lenovo" ]]; then
+           _lenovo
+
+         elif [[ "$2" == "one_plus" ]]; then
+           _one_plus
+
+         elif [[ "$2" == "airbus" ]]; then
+           _airbus
+
+         elif [[ "$2" == "boeing" ]]; then
+           _boeing
+
+         elif [[ "$2" == "lockheed" ]]; then
+           _lockheed
+
+         elif [[ "$2" == "bombardier" ]]; then
+           _bombardier
+
+         elif [[ "$2" == "tesla" ]]; then
+           _tesla
+
+         elif [[ "$2" == "toyota" ]]; then
+           _toyota
+
+         elif [[ "$2" == "us_army" ]]; then
+           _us_army
+
+         elif [[ "$2" == "parrot" ]]; then
+           _parrot
+
+         elif [[ "$2" == "nasa" ]]; then
+           _nasa
+
+         elif [[ "$2" == "tv" ]]; then
+           _tv
+
+         elif [[ "$2" == "magic" ]]; then
+           _magic_morph
+         else
+           print "Morphing option not present !\n"
+         fi
+
+ elif [[ "$1" == "-done" ]]; then
+   _shed
+ elif [[ "$1" == "-come" ]]; then
+   _shed
+ elif [[ "$1" == "-back" ]]; then
+   _back
+ elif [[ "$1" == "-down" ]]; then
+   _back
+ elif [[ "$1" == "-hide" ]]; then
+   _hide
+ elif [[ "$1" == "-piece" ]]; then
+   _piece
+ elif [[ "$1" == "-mb" ]]; then
+   _mb
+ elif [[ "$1" == "-off" ]]; then
+   off
+ elif [[ "$1" == "-out" ]]; then
+   off
+ elif [[ "$1" == "-up" ]]; then
+   _up
+ elif [[ "$1" == "-where" ]]; then
+   _where "$(dig +short myip.opendns.com @resolver1.opendns.com)"
+ elif [[ "$1" == "-what" ]]; then
+   _what
+elif [[ "$1" == "-install" ]]; then
+  _install
+elif [[ "$1" == "--install" ]]; then
+  _install
+fi
